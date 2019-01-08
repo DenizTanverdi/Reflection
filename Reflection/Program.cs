@@ -12,7 +12,7 @@ namespace Reflection
         static void Main(string[] args)
         {
 
-            stringBilgileriniVer();
+            //stringBilgileriniVer();
             /*
              Ogrenci sinifinin public field'larina erişim
              
@@ -24,10 +24,10 @@ namespace Reflection
                                                          BindingFlags.Instance);
 
 
-            foreach (FieldInfo ogrenciAlani in ogrencialanlari)
+           /* foreach (FieldInfo ogrenciAlani in ogrencialanlari)
             {
                 Console.WriteLine("Alan :" + ogrenciAlani.Name);
-            }
+            }*/
 
 
 
@@ -47,17 +47,17 @@ namespace Reflection
 
             if (!ZorunlulukKontrolu.Dogrula(ogrenci))
             {
-                throw new Exception("Öğrenci bilgileri doğrulamadan geçemedi!");
+                Console.WriteLine("Öğrenci bilgileri doğrulamadan geçemedi!");
             }
-            Console.WriteLine("*****************************\n");
-
-            foreach (FieldInfo ogrenciAlani in ogrencialanlari)
-            {
-                Console.WriteLine("Alan :" + ogrenciAlani.Name);
-                Console.WriteLine("Değer :" + ogrenciAlani.GetValue(ogrenci));
-                Console.WriteLine("******************");
+         
+            else{
+                foreach (FieldInfo ogrenciAlani in ogrencialanlari)
+                {
+                    Console.WriteLine("Alan :" + ogrenciAlani.Name);
+                    Console.WriteLine("Değer :" + ogrenciAlani.GetValue(ogrenci));
+                    Console.WriteLine("******************");
+                }
             }
-
             Console.ReadKey();
 
            
